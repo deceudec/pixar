@@ -1,0 +1,753 @@
+/* Design Général --------------------------------------------------------*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+
+/* Design Typographique --------------------------------------------------*/
+
+/* Titres */
+h1,h2,h3,h4{
+	font-family: arial;
+}
+
+h1{
+	text-shadow: 2px 3px 5px #A9A9A9;
+	margin-top: 5px;
+}
+
+/* Textes */
+p,a,li{
+	font-family: 'Work Sans', sans-serif;
+	font-size: 12px;
+}
+
+a{
+	font-size: 17px;
+	color: #6D7676;
+}
+
+a:hover{
+	color: #1AA5E7;
+}
+
+
+
+/* Header ----------------------------------------------------------------*/
+
+header{
+	width: 100vw;
+	height: 10vh;
+	background-color: #e7ecff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	box-shadow: 0px 0px 2vw rgba(0 ,0 ,0 ,0.5);
+	z-index: 9999;
+}
+
+.logo{
+	height: 10vh;
+}
+
+.menuFantome{
+	width: 100vw;
+	height: 10vh;
+}
+
+label{
+	font-size: 50px;
+	display: none;
+	margin-right: 30px;
+}
+
+#switch{ 
+	display: none;
+}
+
+.BoutonsHeader{
+	margin-right: 1vw;
+	text-decoration: none;
+}
+
+/* Header - Media Queries ---------------------------------------------- */
+
+@media (max-width: 700px){
+	nav{
+		display: none;
+		clear: both;
+	}
+
+	label{
+		display: block;
+		float: right;
+	}
+
+	#switch:checked + nav{
+		display: flex;
+		flex-direction: column;
+	}
+
+	header{
+		display: block;
+	}
+
+	.logo{
+		float: left;
+	}
+
+	a{
+		background-color: #e7ecff;
+		text-align: center;
+		margin-right: 0px;
+		padding: 10px;
+		border-bottom: 2px solid black;
+	}
+
+
+
+}
+
+/* Section 1 -------------------------------------------------------------*/
+.section1{
+	width: 100vw;
+	height: 80vh;
+	background-image: url(images/làhautbeau.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding-top: 20vh;
+}
+
+.blocSection1{
+	width: 40vw;
+	background-color: rgba(255,255,255,0.5);
+	border: 5px solid #e7ecff;
+	margin-left: 15vw;	
+}
+
+.logoPixar{
+	width: 40vw;
+	margin-top: 3vh;
+}
+
+.texteSection1{
+	font-size: 20px;
+}
+
+.Depuis{
+	font-size: 23px;
+	color: #6D7676;
+	font-family: 'Work Sans', sans-serif;
+	margin-top: 1vw;
+}
+
+/* Section 1 Media Queries -----------------------------------------------*/
+@media (max-width: 1000px){
+	.blocSection1{
+		width: 80vw;
+		height: 50vh;
+		margin-left: 10vw;
+	}
+
+	.texteSection1{
+		font-size: 17px;
+	}
+
+	.logoPixar{
+		width: 80vw;
+	}
+}
+
+@media (max-width: 600px){
+	.texteSection1{
+		font-size: 16px;
+	}
+}
+@media (max-width: 500px){
+	.texteSection1{
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 450px){
+	.texteSection1{
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 375px){
+	.texteSection1{
+		font-size: 14px;
+	}
+
+	.logoPixar{
+		width: 80vw;
+	}
+}
+
+/* Section 2 -------------------------------------------------------------*/
+.section2{
+	width: 100vw;
+	height: 90vh;
+	background-color: white;
+	box-shadow: 0px -10px 20px rgba(0,0,0,0.5);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.blocSection2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.dateSection2{
+	width: 20%;
+	font-size: 35px;
+	text-align: right;
+	color: white;
+	background-color: black;
+}
+
+.dateSection2:hover{
+	animation-name: ChangementCouleur;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes ChangementCouleur {
+	0%{background-color: black;}
+	50%{background-color: #e7ecff;}
+	100%{background-color: black;}
+}
+
+
+.imageSection2{
+	width: 12%;
+	margin: 20px;
+	border-radius: 50%;
+	border:4px solid black;
+}
+
+.imageSection2:hover{
+	box-shadow: 0px 0px 10px rgba(0 ,0 ,0 ,0.5);
+	filter: blur(0.9px);
+	animation-name: Rondeur;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes Rondeur {
+	0%{border-radius: 50%;filter: saturate(0);}
+	100%{border-radius: 0px;filter: saturate(1)}
+}
+
+.texteSection2{
+	width: 23%;
+	font-size: 15px;
+}
+
+/* Section 2 Media Queries -----------------------------------------------*/
+@media (max-width: 1000px){
+	.texteSection2{
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 900px){
+	.section2{
+		height: 160vh;
+	}
+
+	.blocSection2{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.dateSection2{
+		width: 60vw;
+		font-size: 40px;
+		text-align: center;
+	}
+
+	.imageSection2{
+		width: 27%;
+	}
+
+	.texteSection2{
+		width: 75vw;
+		font-size: 18px;
+		margin-bottom: 4vh;
+	}
+}
+
+@media (max-width: 600px){
+	.section2{
+		height: 155vh;
+	}
+
+	.dateSection2{
+		width: 80vw;
+		font-size: 40px;
+	}
+
+	.imageSection2{
+		width: 30%;
+	}
+
+	.texteSection2{
+		width: 75vw;
+		font-size: 16px;
+		margin-bottom: 4vh;
+	}
+
+}
+
+@media (max-width: 375px){
+	.section2{
+		height: 165vh;
+	}
+
+	.blocSection2{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.dateSection2{
+		width: 80vw;
+		font-size: 35px;
+		text-align: center;
+	}
+
+	.imageSection2{
+		width: 45%;
+
+	}
+
+	.texteSection2{
+		width: 75vw;
+		font-size: 16px;
+		margin-bottom: 2vh;
+	}
+
+}
+
+/* Section 3 -------------------------------------------------------------*/
+.section3{
+	width: 100vw;
+	height: 90vh;
+	background-color: white;
+	box-shadow: 0px -10px 20px rgba(0,0,0,0.5);
+}
+
+.ligne1{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;  
+}
+
+.ligne2{
+	display: flex;
+	flex-direction: ;
+	justify-content: space-around;
+}
+
+.blocSection3{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 4vw;
+	margin-bottom: auto;
+}
+
+.imageSection3{
+	width: 15vw;
+	margin: 10px;
+	border-radius: 4%;
+	border: 4px solid black;
+}
+
+.imageSection3:hover{
+	box-shadow: 0px 0px 10px rgba(0 ,0 ,0 ,0.5);
+	filter: blur(0.9px);
+}
+
+.texteSection3{
+	width: 15vw;
+	margin: 18px;
+	font-size: 20px;
+
+}
+
+/* Section 3 Media Queries -----------------------------------------------*/
+@media (max-width: 1600px){
+	.imageSection3{
+		width: 20vw;
+	}
+
+	.texteSection3{
+		width: 20vw;
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 1200px){
+	.imageSection3{
+		width: 25vw;
+	}
+
+	.texteSection3{
+		width: 25vw;
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 900px){
+	.imageSection3{
+		width: 25vw;
+	}
+
+	.texteSection3{
+		width: 25vw;
+		font-size: 17px;
+	}
+}
+
+@media (max-width: 700px){
+	.section3{
+		height: 278vh;
+	}
+
+	.ligne1{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.ligne2{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.imageSection3{
+		width: 50vw;
+
+	}
+
+	.texteSection3{
+		width: 60vw;
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 600px){
+	.section3{
+		height: 300vh;
+	}
+
+	.imageSection3{
+		width: 65vw;
+
+	}
+
+	.texteSection3{
+		width: 80vw;
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 500px){
+	.section3{
+		height: 260vh;
+	}
+}
+
+@media (max-width: 450px){
+	.section3{
+		height: 235vh;
+	}
+}
+
+@media (max-width: 375px){
+	.section3{
+		height: 215vh;
+	}
+
+	.ligne1{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.ligne2{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.imageSection3{
+		width: 65vw;
+
+	}
+
+	.texteSection3{
+		width: 80vw;
+		font-size: 18px;
+	}
+}
+
+/* Section 4 -------------------------------------------------------------*/
+.section4{
+	width: 100vw;
+	height: 90vh;
+	background-color: white;
+	box-shadow: 0px -10px 20px rgba(0,0,0,0.5);
+}
+
+.blocSection4{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.imageSection4{
+	width: 50vw;
+	height: 90vh;
+	box-shadow: 0px 0px 10px rgba(0 ,0 ,0 ,0.5);
+}
+
+.textesSection4{
+	display: flex;
+	flex-direction: column; 
+	width: 30vw;
+	margin-right: 10vw;
+}
+
+.grosTexte{
+	font-size: 35px;
+	font-weight: bold;
+	text-shadow: 0.03em 0.03em 0.08em black;
+}
+
+
+.petitTexte{
+	margin-top: 1vw;
+	font-size: 20px;
+}
+
+/* Section 4 Media Queries -----------------------------------------------*/
+@media (max-width: 1200px){
+	.grosTexte{
+		font-size: 30px
+	}
+
+	.petitTexte{
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 800px){
+	.section4{
+		height: 105vh;
+		padding-top: 5vh;
+	}
+
+	.blocSection4{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.imageSection4{
+		width: 80vw;
+		height: 60vh; 
+		margin-bottom: 4vh;
+	}
+
+	.textesSection4{
+		width: 80vw;
+		display: flex;
+		align-self: center;
+	}
+
+	.grosTexte{
+		font-size: 22px;
+		width: 80vw;
+		margin-bottom: 3vh;
+		margin-left: 8vw;
+	}
+
+	.petitTexte{
+		font-size: 17px;
+		width: 80vw;
+		margin-left: 5vw;
+	}
+}
+
+@media (max-width: 600px){
+	.section4{
+		height: 105vh;
+	}
+
+	.imageSection4{
+		height: 45vh;
+	}
+
+	.textesSection4{
+		width: 80vw;
+	}
+
+	.grosTexte{
+		font-size: 20px;
+		width: 80vw;
+		margin-bottom: 3vh;
+		margin-left: 8vw;
+	}
+
+	.petitTexte{
+		font-size: 15px;
+		width: 80vw;
+	}
+
+@media (max-width: 500px){
+
+	.section4{
+		height: 110vh;
+	}
+
+}
+
+@media (max-width: 375px){
+
+	.textesSection4{
+		width: 80vw;
+	}
+
+	.grosTexte{
+		font-size: 20px;
+		width: 80vw;
+		margin-bottom: 3vh;
+		margin-left: 8vw;
+	}
+
+	.petitTexte{
+		font-size: 15px;
+		width: 80vw;
+		margin-left: 5vw;
+	}
+
+	}
+
+}
+
+/* Section 5 -------------------------------------------------------------*/
+
+.section5{
+	width: 100vw;
+	height: 45vh;
+	background-color: #b0c4de;
+	box-shadow: 0px -10px 20px rgba(0,0,0,0.5);
+	padding-top: 6vh;
+}
+
+.blocSection5{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around; 
+}
+
+.pictogrammes{
+	width: 15vw;
+	margin-right: 1vw;
+}
+
+.textesSection5{
+	display: flex;
+	align-items: center;
+	margin-left: 3vw;
+	color: grey;
+}
+/* Section 5 media queries -----------------------------------------------*/
+@media (max-width: 700px){
+	.section5{
+		height: 65vh;
+		padding-top: 2vh;
+	}
+
+	.blocSection5{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.pictogrammes{
+		width: 18vw;
+	}
+
+	.groupe2{
+		margin-top: 4vh;
+	}
+
+	.groupe3{
+		margin-top: 4vh;
+	}
+
+	.textesSection5{
+		display: flex;
+		align-items: center;
+		margin-left: 39vw;
+	}
+
+}
+
+@media (max-width: 375px){
+	.section5{
+		height: 60vh;
+		padding-top: 2vh;
+	}
+
+	.blocSection5{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.pictogrammes{
+		width: 32vw;
+	}
+
+	.groupe2{
+		margin-top: 4vh;
+	}
+
+	.groupe3{
+		margin-top: 4vh;
+	}
+
+	.textesSection5{
+		display: flex;
+		align-items: center;
+		margin-left: 30vw;
+	}
+
+}
+
+/* Footer ----------------------------------------------------------------*/
+footer{
+	width: 100vw;
+	height: 10vh;
+	background-color: #e7ecff;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+
+footer a{
+	color: #6D7676;
+}
+
